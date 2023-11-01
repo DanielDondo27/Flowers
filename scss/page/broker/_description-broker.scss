@@ -1,0 +1,306 @@
+.description-broker {
+   @extend %padding;
+   //===============================================================================================================
+   background-image: url(../img/broker/broker-bg-1.webp);
+   //===============================================================================================================
+   @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url("../img/broker/broker-bg-1@2x.webp");
+   }
+   //===============================================================================================================
+   @extend %bg;
+   // .description-broker__container
+   &__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+   // .description-broker__title
+   &__title {
+      font-weight: 600;
+      @include adaptiveValue("font-size", 36, 20);
+      line-height: math.div(46, 36);
+      text-align: center;
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 70, 45);
+      }
+   }
+   // .description-broker__inner
+   &__inner {
+      display: grid;
+      align-items: center;
+      max-width: 100%;
+      grid-template-columns: repeat(2, 1fr);
+
+      @include adaptiveValue("gap", 182, 74, 0, 1530, 991.98);
+      //===============================================================================================================
+      @media screen and (max-width: $tablet) {
+         @include adaptiveValue("gap", 74, 60, 0, 991.98, 479.98);
+         width: 100%;
+      }
+      //===============================================================================================================
+      @media screen and (max-width: $mobile) {
+         grid-template-columns: 1fr;
+         grid-template-rows: repeat(2, 1fr);
+      }
+   }
+   // .description-broker__circle
+   &__circle {
+      justify-self: center;
+   }
+   // .description-broker__items
+   &__items {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      @include adaptiveValue("gap", 30, 10);
+      //===============================================================================================================
+      @media screen and (max-width: $tablet) {
+         grid-template-columns: 1fr;
+         grid-template-rows: repeat(4, 1fr);
+      }
+      //===============================================================================================================
+      @media screen and (min-width: $mobile) and (max-width: $tablet) {
+         justify-self: end;
+      }
+      //===============================================================================================================
+      @media screen and (min-width: $mobileSmall) and (max-width: $mobile) {
+         justify-self: center;
+      }
+      //===============================================================================================================
+      @media screen and (max-width: $mobileSmall) {
+         width: 100%;
+      }
+   }
+   // .description-broker__item
+   &__item {
+      position: relative;
+
+      display: flex;
+      flex-direction: column;
+
+      @include adaptiveValue("padding-top", 40, 11);
+      @include adaptiveValue("padding-bottom", 40, 19);
+      @include adaptiveValue("padding-left", 30, 17);
+      @include adaptiveValue("padding-right", 30, 17);
+
+      background-color: #23303f;
+      border: rem(1) solid rgba(85, 122, 161, 0.3);
+      //===============================================================================================================
+      @media screen and (min-width: $tablet) {
+         max-width: rem(360);
+      }
+      //===============================================================================================================
+      @media screen and (max-width: $mobileSmall) {
+         width: 100%;
+      }
+   }
+   // .description-broker__step
+   &__step {
+      font-weight: 600;
+      @include adaptiveValue("font-size", 30, 15);
+      line-height: math.div(37, 30);
+      color: $text-des;
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 15, 8);
+      }
+   }
+   // .description-broker__text
+   &__text {
+      font-weight: 500;
+      @include adaptiveValue("font-size", 16, 12);
+      line-height: math.div(22, 16);
+      color: $color-tex;
+   }
+   // .description-broker__number
+   &__number {
+      position: absolute;
+      top: 0;
+      right: rem(10);
+
+      font-weight: 600;
+      @include adaptiveValue("font-size", 72, 30);
+      line-height: math.div(88, 72);
+      color: $color-tex;
+      opacity: 0.08;
+   }
+}
+//===============================================================================================================
+.circle-description-broker {
+   position: relative;
+   // .circle-description-broker__wrapper
+   &__wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+   }
+   // .circle-description-broker__picture
+   &__picture {
+      img {
+         max-width: 100%;
+         height: auto;
+      }
+   }
+   // .circle-description-broker__item
+   &__item {
+      display: flex;
+      align-items: center;
+      gap: rem(10);
+
+      position: absolute;
+      &:nth-child(1) {
+         bottom: rem(175);
+         left: rem(-105);
+         flex-direction: row-reverse;
+         //===============================================================================================================
+         @media screen and (max-width: $tablet) {
+            @include adaptiveValue("bottom", 175, 105);
+            @include adaptiveValue("left", -105, -75);
+         }
+      }
+      &:nth-child(2) {
+         top: rem(-15);
+         right: rem(-35);
+      }
+      &:nth-child(3) {
+         bottom: rem(17);
+         right: rem(-35);
+      }
+      //===============================================================================================================
+      @media screen and (max-width: $tablet) {
+         @include adaptiveValue("gap", 10, 5, 0, 991.98, 320.98);
+      }
+   }
+   // .circle-description-broker__item-icon
+   &__item-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      width: rem(76);
+      height: rem(76);
+      background-color: #23303f;
+      border: rem(1) solid rgba(85, 122, 161, 0.3);
+      border-radius: 50%;
+
+      animation: circle-rev 20s linear infinite;
+
+      //===============================================================================================================
+      @media screen and (max-width: $tablet) {
+         @include adaptiveValue("width", 76, 40);
+         @include adaptiveValue("height", 76, 40);
+         &.-f {
+            img {
+               @include adaptiveValue("width", 27, 14);
+               @include adaptiveValue("height", 38, 20);
+            }
+         }
+         &.-c {
+            img {
+               @include adaptiveValue("width", 34, 18);
+               @include adaptiveValue("height", 38, 20);
+            }
+         }
+         &.-l {
+            img {
+               @include adaptiveValue("width", 27, 14);
+               @include adaptiveValue("height", 38, 20);
+            }
+         }
+      }
+      //===============================================================================================================
+   }
+   // .circle-description-broker__name
+   &__name {
+      font-weight: 500;
+      @include adaptiveValue("font-size", 14, 12);
+      line-height: math.div(22, 14);
+      text-transform: uppercase;
+      color: $text-des;
+
+      animation: circle-rev 20s linear infinite;
+   }
+   // .circle-description-broker__circle
+   &__circle {
+      display: block;
+      width: rem(413);
+      height: rem(417);
+      background-color: transparent;
+      border: rem(1) solid rgba(85, 122, 161, 0.3);
+      border-radius: 50%;
+
+      animation: circle 20s linear infinite;
+
+      //===============================================================================================================
+      @media screen and (max-width: $tablet) {
+         @include adaptiveValue("width", 413, 220);
+         @include adaptiveValue("height", 417, 220);
+      }
+   }
+   // .circle-description-broker__circle-icon
+   &__circle-icon {
+      color: $hover-text;
+      position: absolute;
+      &.-l {
+         top: rem(29);
+         left: rem(77);
+         svg {
+            transform: rotate(45deg);
+         }
+         //===============================================================================================================
+         @media screen and (max-width: $tablet) {
+            @include adaptiveValue("top", 29, 9);
+            @include adaptiveValue("left", 77, 40);
+         }
+      }
+      &.-t {
+         top: rem(152);
+         right: rem(-3);
+         svg {
+            transform: rotate(160deg);
+         }
+         //===============================================================================================================
+         @media screen and (max-width: $tablet) {
+            @include adaptiveValue("top", 152, 74);
+            @include adaptiveValue("right", -3, -5);
+         }
+      }
+      &.-b {
+         bottom: rem(25);
+         left: rem(86);
+         svg {
+            transform: rotate(-60deg);
+         }
+         //===============================================================================================================
+         @media screen and (max-width: $tablet) {
+            @include adaptiveValue("bottom", 25, 18);
+            @include adaptiveValue("left", 86, 31);
+         }
+      }
+      svg {
+         fill: currentColor;
+      }
+   }
+}
+//===============================================================================================================
+@keyframes circle {
+   0% {
+      transform: rotate(0deg);
+   }
+   100% {
+      transform: rotate(360deg);
+   }
+}
+//===============================================================================================================
+@keyframes circle-rev {
+   0% {
+      transform: rotate(0deg);
+   }
+   100% {
+      transform: rotate(-360deg);
+   }
+}

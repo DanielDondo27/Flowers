@@ -1,0 +1,19 @@
+//===============================================================================================================
+@import "./contacts/hero-contacts";
+@import "./contacts/communication-contacts";
+@import "./contacts/teams-contacts";
+//===============================================================================================================
+.page {
+   // .page__hero-contacts
+   &__hero-contacts {
+   }
+   // .page__communication
+   &__communication {
+   }
+   // .page__teams
+   &__teams {
+   }
+   // .page__contacts
+   &__contacts {
+   }
+}

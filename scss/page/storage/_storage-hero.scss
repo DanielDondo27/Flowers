@@ -1,0 +1,60 @@
+.hero-storage {
+   @extend %padding;
+
+   //===============================================================================================================
+   background-image: url(../img/storage/storage-bg.png);
+   @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url("../img/storage/storage-bg@2x.png");
+   }
+   //===============================================================================================================
+   background-attachment: scroll;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+
+   // .hero-storage__container
+   &__container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+   // .hero-storage__titles-items
+   &__titles-items {
+      display: flex;
+      flex-direction: column;
+      @include adaptiveValue("gap", 22, 10);
+   }
+   // .hero-storage__suptitle
+   &__suptitle {
+      font-weight: 500;
+      @include adaptiveValue("font-size", 12, 10);
+      line-height: math.div(15, 12);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-align: center;
+   }
+   // .hero-storage__title
+   &__title {
+      position: relative;
+
+      font-weight: 600;
+      @include adaptiveValue("font-size", 72, 34);
+      line-height: math.div(75, 72);
+      text-align: center;
+
+      &::after {
+         content: "";
+         position: absolute;
+         bottom: rem(-10);
+         left: 50%;
+         transform: translate(-50%, 0%);
+
+         display: block;
+         height: rem(1);
+         width: rem(60);
+         background-color: $mainColor;
+      }
+   }
+}

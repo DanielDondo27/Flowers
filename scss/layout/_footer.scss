@@ -1,0 +1,146 @@
+.footer {
+   @include adaptiveValue("padding-top", 50, 25);
+   @include adaptiveValue("padding-bottom", 50, 25);
+   background-color: $bgc-burger;
+   // .footer__container
+   &__container {
+   }
+   // .footer__inner
+   &__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: rem(10);
+      //===============================================================================================================
+      @media screen and (max-width: $tablet) {
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         grid-template-rows: repeat(2, 1fr);
+         @include adaptiveValue("font-size", 30, 10, 0, 1530, 479.98);
+         grid-row-gap: rem(30);
+      }
+      //===============================================================================================================
+      @media screen and (max-width: em(530)) {
+         grid-template-columns: 1fr;
+         grid-template-rows: repeat(4, 1fr);
+      }
+   }
+   // .footer__logo
+   &__logo {
+      display: flex;
+      align-items: center;
+      gap: rem(5);
+
+      img {
+         width: rem(50);
+         height: rem(50);
+      }
+   }
+   // .footer__logo-text
+   &__logo-text {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: rem(70);
+
+      @include adaptiveValue("font-size", 16, 14);
+      line-height: 1.2;
+   }
+   // .footer__list
+   &__list {
+   }
+   // .footer__list-social
+   &__list-social {
+   }
+   // .social-footer__info
+   &__info {
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      gap: rem(14);
+      @media screen and (min-width: em(530)) and (max-width: $tablet) {
+         justify-self: end;
+      }
+   }
+}
+//===============================================================================================================
+.list-footer {
+   display: grid;
+   @include adaptiveValue("min-width", 346, 245, 0, 1530, 991.98);
+   grid-template-columns: repeat(2, 1fr);
+   grid-template-rows: repeat(2, 1fr);
+   gap: rem(10);
+   // .list-footer__item
+   &__item {
+   }
+   // .list-footer__link
+   &__link {
+      font-weight: 500;
+      font-size: rem(12);
+      line-height: math.div(15, 12);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: $color-tex;
+      opacity: 0.8;
+
+      transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+      @media (any-hover: hover) {
+         &:hover {
+            color: $hover-text;
+         }
+      }
+   }
+}
+//===============================================================================================================
+.social-footer {
+   display: flex;
+   flex-direction: column;
+   align-items: left;
+   gap: rem(12);
+
+   // .social-footer__item
+   &__item {
+   }
+   // .social-footer__link
+   &__link {
+      display: flex;
+      align-items: center;
+      gap: rem(15);
+
+      font-weight: 400;
+      font-size: rem(14);
+      @include adaptiveValue("font-size", 14, 13);
+      line-height: math.div(24, 14);
+      color: $color-tex;
+
+      transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+      @media (any-hover: hover) {
+         &:hover {
+            color: $hover-text;
+         }
+      }
+   }
+   // .social-footer__icon
+   &__icon {
+      fill: currentColor;
+   }
+}
+//===============================================================================================================
+.info-footer {
+   // .info-footer__text
+   &__text {
+      font-weight: 400;
+      @include adaptiveValue("font-size", 14, 12);
+      line-height: math.div(24, 14);
+      color: $color-tex;
+
+      transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+      &._link {
+         @media (any-hover: hover) {
+            &:hover {
+               color: $hover-text;
+            }
+         }
+      }
+   }
+}

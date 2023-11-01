@@ -1,0 +1,190 @@
+.communication {
+   @extend %padding;
+   //===============================================================================================================
+   background-image: url(../img/contacts/bg/contacts-bg-2.webp);
+   @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url("../img/contacts/bg/contacts-bg-2@2x.webp");
+   }
+   //===============================================================================================================
+   @extend %bg;
+
+   // .communication__container
+   &__container {
+   }
+   // .communication__items
+   &__items {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr;
+      @include adaptiveValue("gap", 30, 15, 0, 1530, 991.98);
+      //===============================================================================================================
+      @media screen and (max-width: $tablet) {
+         grid-template-columns: repeat(2, 1fr);
+         grid-template-rows: 2fr;
+      }
+      //===============================================================================================================
+      @media screen and (max-width: em(699.98)) {
+         grid-template-columns: 1fr;
+         grid-template-rows: repeat(3, 1fr);
+      }
+      //===============================================================================================================
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 60, 30);
+      }
+   }
+   // .communication__item
+   &__item {
+      position: relative;
+
+      display: flex;
+      align-items: center;
+      gap: rem(20);
+
+      @include adaptiveValue("padding-top", 40, 20, 0, 1530, 991.98);
+      @include adaptiveValue("padding-bottom", 40, 20, 0, 1530, 991.98);
+      @include adaptiveValue("padding-left", 40, 20, 0, 1530, 991.98);
+      @include adaptiveValue("padding-right", 40, 20, 0, 1530, 991.98);
+
+      background-color: #23303f;
+      border: rem(1) solid rgba(85, 122, 161, 0.3);
+
+      &::before {
+         content: "";
+         position: absolute;
+         top: 50%;
+         left: 0;
+         transform: translate(0%, -50%);
+         width: rem(1);
+         height: rem(50);
+         background-color: $text-des;
+      }
+      //===============================================================================================================
+      @media screen and (max-width: em(540.98)) {
+         align-items: flex-start;
+      }
+      //===============================================================================================================
+      &:nth-child(3) {
+         @media screen and (min-width: em(699.98)) and (max-width: $tablet) {
+            grid-row: 2;
+            grid-column: 1 / span 2;
+            justify-self: center;
+         }
+      }
+   }
+   // .communication__content
+   &__content {
+      display: flex;
+      @include adaptiveValue("gap", 30, 10);
+      //===============================================================================================================
+      @media screen and (max-width: $mobile) {
+         display: grid;
+         grid-template-columns: 1fr;
+         grid-template-rows: repeat(2, 1fr);
+      }
+      //===============================================================================================================
+      @media screen and (max-width: $mobileSmall) {
+         display: flex;
+         flex-direction: column;
+      }
+   }
+}
+//===============================================================================================================
+.item-communication {
+   // .item-communication__picture-item
+   &__picture-item {
+   }
+   // .item-communication__box
+   &__box {
+      display: flex;
+      flex-direction: column;
+   }
+   // .item-communication__icon-title
+   &__icon-title {
+      svg {
+         fill: currentColor;
+      }
+   }
+   // .item-communication__title
+   &__title {
+      display: flex;
+      align-items: center;
+      gap: rem(12);
+
+      font-weight: 500;
+      @include adaptiveValue("font-size", 22, 15);
+      line-height: math.div(32, 22);
+      color: $text-des;
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 13, 10);
+      }
+   }
+   // .item-communication__link
+   &__link {
+      font-weight: 400;
+      @include adaptiveValue("font-size", 16, 12);
+      line-height: math.div(22, 16);
+      color: $color-tex;
+
+      transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+      //===============================================================================================================
+      @media (any-hover: hover) {
+         &:hover {
+            color: $hover-text;
+         }
+      }
+      //===============================================================================================================
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 10, 8);
+      }
+   }
+}
+
+//===============================================================================================================
+.content-communication {
+   // .content-communication__picture
+   &__picture {
+      position: relative;
+      @include adaptiveValue("width", 490, 310, 0, 1530, 767.98);
+      @include adaptiveValue("height", 546, 290, 0, 1530, 767.98);
+      //===============================================================================================================
+      @media screen and (max-width: $mobile) {
+         @include adaptiveValue("width", 581, 450, 0, 767.98, 479.98);
+      }
+      //===============================================================================================================
+      @media screen and (max-width: $mobileSmall) {
+         @include adaptiveValue("width", 450, 290, 0, 479.98, 319.98);
+         @include adaptiveValue("height", 290, 160, 0, 479.98, 319.98);
+      }
+      //===============================================================================================================
+      overflow: hidden;
+
+      img {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+      //===============================================================================================================
+      @media screen and (max-width: $mobile) {
+         justify-self: center;
+      }
+   }
+   // .content-communication__map
+   &__map {
+      @include adaptiveValue("width", 1010, 450, 0, 1530, 479.98);
+      @include adaptiveValue("height", 546, 290, 0, 1530, 767.98);
+      //===============================================================================================================
+      @media screen and (max-width: $mobile) {
+         @include adaptiveValue("height", 290, 296);
+         justify-self: center;
+      }
+      //===============================================================================================================
+      @media screen and (max-width: $mobileSmall) {
+         @include adaptiveValue("width", 450, 290, 0, 479.98, 319.98);
+      }
+   }
+}

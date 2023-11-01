@@ -1,0 +1,55 @@
+.contacts-hero {
+   @extend %padding;
+   //===============================================================================================================
+   background-image: url(../img/contacts/bg/contacts-bg-1.webp);
+   @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url("../img/contacts/bg/contacts-bg-1@2x.webp");
+   }
+   //===============================================================================================================
+   @extend %bg;
+   // .contacts-hero__container
+   &__container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+   // .contacts-hero__titles-items
+   &__titles-items {
+      display: flex;
+      flex-direction: column;
+      @include adaptiveValue("gap", 22, 10);
+   }
+   // .contacts-hero__suptitle
+   &__suptitle {
+      font-weight: 500;
+      @include adaptiveValue("font-size", 12, 10);
+      line-height: math.div(15, 12);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-align: center;
+   }
+   // .contacts-hero__title
+   &__title {
+      position: relative;
+
+      font-weight: 600;
+      @include adaptiveValue("font-size", 72, 34);
+      line-height: math.div(75, 72);
+      text-align: center;
+
+      &::after {
+         content: "";
+         position: absolute;
+         bottom: rem(-10);
+         left: 50%;
+         transform: translate(-50%, 0%);
+
+         display: block;
+         height: rem(1);
+         width: rem(60);
+         background-color: $mainColor;
+      }
+   }
+}

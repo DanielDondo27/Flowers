@@ -1,0 +1,26 @@
+.box-titles {
+   // .box-titles__suptitle
+
+   &__suptitle {
+      font-weight: 500;
+      @include adaptiveValue("font-size", 10, 8);
+      line-height: math.div(12, 10);
+
+      text-align: center;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+
+      color: $text-des;
+      opacity: 0.7;
+   }
+
+   // .box-titles__title
+
+   &__title {
+      font-weight: 600;
+      @include adaptiveValue("font-size", 32, 28);
+      line-height: math.div(60, 32);
+      text-align: center;
+   }
+}
+//===============================================================================================================

@@ -1,0 +1,112 @@
+//===============================================================================================================
+.form-popup {
+   // .form-popup__button-submit
+   &__button-submit {
+      position: relative;
+      overflow: hidden;
+
+      @include adaptiveValue("padding-top", 23, 16);
+      @include adaptiveValue("padding-bottom", 23, 16);
+      @include adaptiveValue("padding-left", 51, 30);
+      @include adaptiveValue("padding-right", 51, 30);
+
+      font-weight: 500;
+      @include adaptiveValue("font-size", 13, 12);
+      line-height: math.div(16, 13);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-align: center;
+
+      border: rem(1) solid #ffffff5c;
+      backdrop-filter: none;
+      transition: border-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+      &:before {
+         content: "";
+         position: absolute;
+         top: 0;
+         right: -50px;
+         bottom: 0;
+         left: 0;
+         border-right: rem(300) solid transparent;
+         border-top: rem(370) solid #ffffff5c;
+         transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+         transform: translateX(-100%);
+         z-index: -1;
+      }
+      //===============================================================================================================
+      @media (any-hover: hover) {
+         &:hover {
+            border-color: $hover-text;
+         }
+         &:hover:before {
+            transform: translateX(0%);
+            z-index: 4;
+         }
+      }
+   }
+}
+//===============================================================================================================
+
+.button-main {
+   position: relative;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+
+   padding: 25px 96px;
+   overflow: hidden;
+
+   // .button-main__wrapper
+   &__wrapper {
+      position: absolute;
+      inset: 0;
+      background-color: transparent;
+      pointer-events: none;
+      overflow: hidden;
+
+      &::before {
+         content: "";
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, 50%);
+         width: rem(350);
+         height: rem(150);
+         background: linear-gradient(transparent, $mainColor, $color-gray, $mainColor, transparent);
+         animation: animate-btn 4s linear infinite;
+      }
+      &::after {
+         content: "";
+         position: absolute;
+         inset: rem(2);
+         background-color: #1c2e39;
+         z-index: 1;
+      }
+   }
+
+   // .button-main__text
+   &__text {
+      font-weight: 500;
+      font-size: rem(12);
+      line-height: math.div(15, 12);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+
+      transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+      text-align: center;
+      z-index: 2;
+   }
+   //===============================================================================================================
+   @media (any-hover: hover) {
+      &:hover {
+         .button-main__text {
+            color: $hover-text;
+         }
+      }
+   }
+}
+
+//===============================================================================================================

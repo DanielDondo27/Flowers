@@ -1,0 +1,806 @@
+//===============================================================================================================
+.additional {
+   position: relative;
+   overflow: hidden;
+   @extend %padding;
+
+   background-image: url(../img/home/home__additional/additional-bg.png);
+   background-attachment: scroll;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+
+   // .additional__container
+   &__container {
+   }
+   // .additional__inner
+   &__inner {
+      display: flex;
+      align-items: center;
+      @include adaptiveValue("gap", 80, 10, 0, 1530, 991.98);
+      @media screen and (max-width: $tablet) {
+         flex-direction: column;
+         @include adaptiveValue("gap", 50, 30);
+      }
+   }
+   // .additional__descripthen
+   &__descripthen {
+      display: flex;
+      flex-direction: column;
+      @media screen and (min-width: $tablet) {
+         @include adaptiveValue("flex-basis", 570, 397);
+      }
+   }
+   // .additional__map
+   &__map {
+      position: relative;
+   }
+}
+//===============================================================================================================
+.descripthen-additional {
+   // .descripthen-additional__titles
+   &__titles {
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 55, 30);
+      }
+   }
+   // .descripthen-additional__suptitle
+   // .descripthen-additional__titel
+   &__suptitle,
+   &__titel {
+      text-align: left;
+      @media screen and (max-width: $mobileSmall) {
+         text-align: center;
+      }
+   }
+   // .descripthen-additional__box-text
+   &__box-text {
+      display: flex;
+      flex-direction: column;
+      @include adaptiveValue("gap", 25, 14);
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 90, 30);
+      }
+   }
+   // .descripthen-additional__text
+   &__text {
+      &:nth-child(1) {
+         font-weight: 600;
+         font-size: 16px;
+         line-height: 24px;
+      }
+      span {
+         font-weight: 600;
+         font-size: 16px;
+         line-height: 24px;
+      }
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+   }
+   // .descripthen-additional__button
+   &__button {
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+      z-index: 1;
+
+      @include adaptiveValue("padding-top", 23, 16);
+      @include adaptiveValue("padding-bottom", 23, 16);
+      @include adaptiveValue("padding-left", 51, 30);
+      @include adaptiveValue("padding-right", 51, 30);
+
+      font-weight: 500;
+      @include adaptiveValue("font-size", 13, 12);
+      line-height: math.div(16, 13);
+      text-transform: uppercase;
+      backdrop-filter: none;
+      letter-spacing: 0.1em;
+      text-align: center;
+
+      border: rem(1) solid #ffffff5c;
+      transition: border-color 500ms cubic-bezier(0.4, 0, 0.2, 1), color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+      &:before {
+         content: "";
+         position: absolute;
+         top: 0;
+         right: -50px;
+         bottom: 0;
+         left: 0;
+         border-right: rem(200) solid transparent;
+         border-top: rem(300) solid #ffffff5c;
+         transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+         transform: translateX(-100%);
+         z-index: -1;
+      }
+      //===============================================================================================================
+      @media (any-hover: hover) {
+         &:hover {
+            border-color: $hover-text;
+            color: $mainColor;
+         }
+         &:hover:before {
+            transform: translateX(0%);
+         }
+      }
+   }
+}
+//===============================================================================================================
+.tabs-additional {
+   // .tabs-additional__storage
+   &__storage {
+      position: absolute;
+      transform: translate(0%, 0%);
+
+      display: flex;
+      z-index: 1;
+
+      //===============================================================================================================
+      @media screen and (min-width: $tablet) {
+         @include adaptiveValue("top", -150, -220, 0, 1530, 991.98);
+         left: 60px;
+      }
+      //===============================================================================================================
+      @media screen and (max-width: $tablet) {
+         left: 50%;
+         @include adaptiveValue("bottom", -75, -40);
+         transform: translate(-50%, 0%);
+      }
+   }
+   // .tabs-additional__button
+   &__button {
+   }
+   // .tabs-additional__items
+   &__items {
+   }
+   // .tabs-additional__picture
+   &__picture {
+      position: relative;
+      img {
+         @media screen and (min-width: $tablet) {
+            max-width: 100%;
+            height: auto;
+         }
+         //===============================================================================================================
+         @media screen and (max-width: $tablet) {
+            width: 600px;
+            height: 400px;
+         }
+      }
+   }
+   // .tabs-additional__item
+   &__item {
+      &._basic {
+         position: absolute;
+         @include adaptiveValue("top", 145, 103, 0, 1530, 991.98);
+         @include adaptiveValue("left", 515, 373, 0, 1530, 991.98);
+         //===============================================================================================================
+         @media screen and (max-width: $tablet) {
+            top: 153px;
+            left: 361px;
+         }
+         //===============================================================================================================
+         transform: translate(-50%, -50%);
+
+         display: flex;
+         align-items: center;
+         flex-direction: row-reverse;
+         gap: rem(10);
+
+         font-weight: 500;
+         @include adaptiveValue("font-size", 14, 10);
+         line-height: math.div(24, 14);
+         text-transform: uppercase;
+         color: $mainColor;
+      }
+   }
+}
+//===============================================================================================================
+.button-additional {
+   position: relative;
+   z-index: 1;
+
+   display: flex;
+   align-items: center;
+   gap: rem(16.5);
+
+   font-weight: 600;
+   @include adaptiveValue("font-size", 12, 10);
+   line-height: 24px;
+   text-transform: uppercase;
+   transform: rotate(90deg);
+   color: $color-tex;
+   transition: all 0.4s ease 0s;
+
+   &::before {
+      content: "";
+      position: absolute;
+      top: -19px;
+      left: 25px;
+      transform: translate(-50%, 0%) rotate(90deg);
+
+      display: block;
+      width: rem(1);
+      height: rem(60);
+      background-color: #fff;
+      transition: all 0.4s ease 0s;
+   }
+   //===============================================================================================================
+   @media screen and (min-width: $tablet) {
+      padding-left: 75px;
+   }
+   //===============================================================================================================
+   @media screen and (max-width: $tablet) {
+      @include adaptiveValue("padding-right", 65, 20);
+      &::before {
+         content: "";
+         top: -19px;
+         left: 70px;
+      }
+   }
+
+   // .button-additional__text
+   &__text {
+      display: flex;
+      flex-wrap: wrap;
+      min-width: 150px;
+
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 24px;
+      text-align: center;
+      color: $color-tex;
+      transition: all 0.4s ease 0s;
+      visibility: hidden;
+      pointer-events: none;
+      opacity: 0;
+      //===============================================================================================================
+      @media screen and (min-width: $tablet) {
+         position: absolute;
+         bottom: -10px;
+         left: 0%;
+         transform: translate(50%, 0%) rotate(-90deg);
+      }
+      //===============================================================================================================
+      @media screen and (max-width: $tablet) {
+         display: none;
+      }
+   }
+
+   &.active .button-additional__text {
+      color: #fff;
+      visibility: visible;
+      opacity: 1;
+   }
+   &.active {
+      color: #227ce4;
+      @media screen and (min-width: $tablet) {
+         padding-left: 75px;
+         &::before {
+            left: 35px;
+         }
+      }
+      //===============================================================================================================
+      @media screen and (max-width: $tablet) {
+         @include adaptiveValue("padding-right", 75, 35);
+         &::before {
+            left: 75px;
+         }
+      }
+   }
+}
+//===============================================================================================================
+.item-additional {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+
+   // .item-additional__text-beginning
+   &__text-beginning {
+      position: absolute;
+      top: 0%;
+      left: 0%;
+
+      display: flex;
+      align-items: center;
+      @include adaptiveValue("gap", 10, 5);
+
+      font-weight: 500;
+      @include adaptiveValue("font-size", 14, 10);
+      line-height: math.div(24, 14);
+      text-transform: uppercase;
+
+      color: $mainColor;
+
+      &._ecuador {
+         @include adaptiveValue("top", 252, 172, 0, 1530, 991.98);
+         @include adaptiveValue("left", -315, -239, 0, 1530, 991.98);
+         //===============================================================================================================
+         @media screen and (max-width: $tablet) {
+            @include adaptiveValue("top", 226, 230, 0, 991.98, 479.98);
+            @include adaptiveValue("left", -234, -222, 0, 991.98, 479.98);
+         }
+         //===============================================================================================================
+         @media screen and (max-width: $mobileSmall) {
+            top: rem(228);
+            left: rem(-161);
+            flex-direction: row-reverse;
+         }
+      }
+      &._kenya {
+         @include adaptiveValue("top", 245, 166, 0, 1530, 991.98);
+         @include adaptiveValue("left", -12, -22, 0, 1530, 991.98);
+         //===============================================================================================================
+         @media screen and (max-width: $tablet) {
+            @include adaptiveValue("top", 220, 227, 0, 991.98, 479.98);
+            @include adaptiveValue("left", -18, -5, 0, 991.98, 479.98);
+         }
+      }
+      &._columbia {
+         @include adaptiveValue("top", 230, 160, 0, 1530, 991.98);
+         @include adaptiveValue("left", -311, -235, 0, 1530, 991.98);
+         //===============================================================================================================
+         @media screen and (max-width: $tablet) {
+            @include adaptiveValue("top", 205, 212, 0, 991.98, 479.98);
+            @include adaptiveValue("left", -232, -219, 0, 991.98, 479.98);
+         }
+         //===============================================================================================================
+         @media screen and (max-width: $mobileSmall) {
+            top: 216px;
+            left: -152px;
+            flex-direction: row-reverse;
+         }
+      }
+      &._chile {
+         @include adaptiveValue("top", 312, 213, 0, 1530, 991.98);
+         @include adaptiveValue("left", -265, -199, 0, 1530, 991.98);
+         //===============================================================================================================
+         @media screen and (max-width: $tablet) {
+            @include adaptiveValue("top", 262, 269, 0, 991.98, 479.98);
+            @include adaptiveValue("left", -193, -181, 0, 991.98, 479.98);
+         }
+         //===============================================================================================================
+         @media screen and (max-width: $mobileSmall) {
+            top: rem(268);
+            left: rem(-145);
+            flex-direction: row-reverse;
+         }
+      }
+      &._holland {
+         @include adaptiveValue("top", 109, 70, 0, 1530, 991.98);
+         @include adaptiveValue("left", -113, -96, 0, 1530, 991.98);
+         //===============================================================================================================
+         @media screen and (max-width: $tablet) {
+            @include adaptiveValue("top", 124, 128, 0, 991.98, 479.98);
+            @include adaptiveValue("left", -92, -76, 0, 991.98, 479.98);
+         }
+      }
+      &._israel {
+         @include adaptiveValue("top", 163, 109, 0, 1530, 991.98);
+         @include adaptiveValue("left", -17, -32, 0, 1530, 991.98);
+         //===============================================================================================================
+         @media screen and (max-width: $tablet) {
+            @include adaptiveValue("top", 165, 168, 0, 991.98, 479.98);
+            @include adaptiveValue("left", -23, -11, 0, 991.98, 479.98);
+         }
+      }
+   }
+   // .item-additional__name
+   &__name {
+      visibility: hidden;
+   }
+   // .item-additional__line
+   &__line {
+      visibility: hidden;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      &._ecuador {
+         @include adaptiveValue("width", 302, 205, 0, 1530, 991.98);
+         @include adaptiveValue("top", 202, 142, 0, 1530, 991.98);
+         @include adaptiveValue("left", -233, -160, 0, 1530, 991.98);
+         transform: rotate(-26.66deg);
+         //===============================================================================================================
+         @media screen and (max-width: $tablet) {
+            top: rem(190);
+            left: rem(-161);
+         }
+      }
+      &._kenya {
+         @include adaptiveValue("width", 119, 90, 0, 1530, 991.98);
+         @include adaptiveValue("top", 167, 135, 0, 1530, 991.98);
+         @include adaptiveValue("left", -8, -6, 0, 1530, 991.98);
+         transform: rotate(-96.66deg);
+         @media screen and (max-width: $tablet) {
+            top: rem(186);
+            @include adaptiveValue("left", -6, -4, 0, 991.98, 479.98);
+         }
+      }
+      &._columbia {
+         @include adaptiveValue("width", 277, 197, 0, 1530, 991.98);
+         @include adaptiveValue("top", 188, 135, 0, 1530, 991.98);
+         @include adaptiveValue("left", -214, -151, 0, 1530, 991.98);
+         transform: rotate(-24.66deg);
+         //===============================================================================================================
+         @media screen and (max-width: $tablet) {
+            width: rem(195);
+            top: rem(182);
+            left: rem(-150);
+         }
+      }
+      &._chile {
+         @include adaptiveValue("width", 300, 223, 0, 1530, 991.98);
+         @include adaptiveValue("top", 230, 163, 0, 1530, 991.98);
+         @include adaptiveValue("left", -220, -163, 0, 1530, 991.98);
+         transform: rotate(-38.66deg);
+         //===============================================================================================================
+         @media screen and (max-width: $tablet) {
+            width: rem(216);
+            top: rem(210);
+            left: rem(-159);
+         }
+      }
+      &._holland {
+         @include adaptiveValue("width", 60, 40, 0, 1530, 991.98);
+         @include adaptiveValue("top", 132, 92, 0, 1530, 991.98);
+         @include adaptiveValue("left", -13, -11, 0, 1530, 991.98);
+         transform: rotate(10deg);
+         //===============================================================================================================
+         @media screen and (max-width: $tablet) {
+            width: rem(33);
+            top: rem(140);
+            left: rem(-9);
+         }
+      }
+      &._israel {
+         @include adaptiveValue("width", 45, 33, 0, 1530, 991.98);
+         @include adaptiveValue("top", 151, 111, 0, 1530, 991.98);
+         @include adaptiveValue("left", 29, 24, 0, 1530, 991.98);
+         transform: rotate(-101deg);
+         //===============================================================================================================
+         @media screen and (max-width: $tablet) {
+            top: rem(157);
+            left: rem(20);
+         }
+      }
+
+      display: inline-block;
+      height: rem(1);
+      /* Встановлюємо пунктирну лінію */
+      background-image: repeating-linear-gradient(90deg, #fff, #fff 2px, transparent 2px, transparent 7px);
+   }
+   // .item-additional__icon-wrapper
+   &__icon-wrapper {
+      position: relative;
+      width: rem(32);
+      height: rem(32);
+      @media screen and (max-width: $tablet) {
+         @include adaptiveValue("width", 32, 20);
+         @include adaptiveValue("height", 32, 20);
+      }
+
+      &::after,
+      &::before {
+         position: absolute;
+         content: "";
+
+         display: inline-block;
+         border-radius: 50%;
+         opacity: 60%;
+
+         transition: visibility 500ms cubic-bezier(0.4, 0, 0.2, 1);
+         transform: scale(1);
+         pointer-events: none;
+         @media screen and (max-width: $tablet) {
+            display: none;
+         }
+      }
+      &:after {
+         top: 9px;
+         left: 4.5px;
+
+         width: rem(16);
+         height: rem(16);
+         padding: rem(10);
+
+         border: rem(1) solid rgba(255, 255, 255, 0.3);
+         background-color: rgba(255, 255, 255, 0.3);
+         animation: pulsar 2.5s ease-in-out infinite 2s;
+      }
+      &::before {
+         top: 4.5px;
+         left: 0px;
+
+         width: rem(32);
+         height: rem(32);
+         padding: rem(8);
+
+         border: rem(1) solid rgba(255, 255, 255, 0.1);
+         background-color: rgba(255, 255, 255, 0.1);
+         animation: pulsar 2.5s ease-in-out infinite 1.2s;
+      }
+      &._main {
+         &::after,
+         &::before {
+            position: absolute;
+            content: "";
+
+            display: inline-block;
+            border-radius: 50%;
+            opacity: 60%;
+
+            transition: visibility 500ms cubic-bezier(0.4, 0, 0.2, 1);
+            transform: scale(1);
+            pointer-events: none;
+            @media screen and (max-width: $tablet) {
+               display: none;
+            }
+         }
+
+         &:after {
+            top: 7px;
+            left: 9.5px;
+
+            width: rem(16);
+            height: rem(16);
+            padding: rem(10);
+
+            border: rem(1) solid rgba(255, 255, 255, 0.3);
+            background-color: rgba(255, 255, 255, 0.3);
+            animation: pulsar 2.5s ease-in-out infinite 2s;
+         }
+         &::before {
+            top: 2px;
+            left: 4.5px;
+
+            width: rem(32);
+            height: rem(32);
+            padding: rem(8);
+
+            border: rem(1) solid rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.1);
+            animation: pulsar 2.5s ease-in-out infinite 1.2s;
+         }
+      }
+      //===============================================================================================================
+   }
+   // .item-additional__icon-mark
+   &__icon-mark {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(calc(-50% + 0px), calc(-50% - 10px));
+
+      fill: currentColor;
+      @include adaptiveValue("width", 30, 25, 0, 1530, 991.98);
+      @include adaptiveValue("height", 30, 25, 0, 1530, 991.98);
+      //===============================================================================================================
+      @media screen and (max-width: $tablet) {
+         @include adaptiveValue("width", 25, 15);
+         @include adaptiveValue("height", 25, 15);
+         transform: translate(calc(-50% + 0px), calc(-50% - 6px));
+      }
+      //===============================================================================================================
+      color: $text-des;
+      z-index: 1;
+   }
+   // .item-additional__icon-plane
+   &__icon-plane {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      //===============================================================================================================
+      @media screen and (max-width: em(1200)) {
+         top: 0px;
+         left: 50%;
+         transform: translate(0%, -50%) rotate(26.34deg);
+      }
+      //===============================================================================================================
+      @include adaptiveValue("width", 30, 20, 0, 1530, 991.98);
+      @include adaptiveValue("height", 30, 20, 0, 1530, 991.98);
+      visibility: visible;
+      fill: currentColor;
+      //===============================================================================================================
+      @media screen and (min-width: em(1200)) {
+         &._ecuador {
+            transform: translate(calc(-50% - 124px), calc(-50% + 1px)) rotate(26.34deg);
+            animation: pulsar-plane 8s ease-in-out infinite;
+         }
+         &._kenya {
+            transform: translate(calc(-50% - 14px), calc(-50% + 1px)) rotate(26.34deg);
+            animation: pulsar-plane-2 4s ease-in-out infinite;
+         }
+         &._columbia {
+            transform: translate(calc(-50% - 115px), calc(-50% + 1px)) rotate(26.34deg);
+            animation: pulsar-plane-3 8s ease-in-out infinite;
+         }
+         &._chile {
+            transform: translate(calc(-50% - 126px), calc(-50% + 1px)) rotate(26.34deg);
+            animation: pulsar-plane-4 8s ease-in-out infinite;
+         }
+         &._holland {
+            transform: translate(calc(-50% - 18px), calc(-50% + 1px)) rotate(26.34deg);
+            animation: pulsar-plane-5 4s ease-in-out infinite;
+         }
+         &._israel {
+            transform: translate(calc(-50% - 28px), calc(-50% - 13px)) rotate(30.34deg);
+            animation: pulsar-plane-6 4s ease-in-out infinite;
+         }
+      }
+      //===============================================================================================================
+      @media screen and (max-width: em(1200)) {
+         &._israel {
+            transform: translate(calc(-50% - 0px), calc(-50% - 13px)) rotate(18.34deg);
+         }
+      }
+      //===============================================================================================================
+      @media screen and (max-width: $mobile) {
+         &._israel {
+            transform: translate(calc(-50% - 0px), calc(-50% - 13px)) rotate(26.34deg);
+         }
+      }
+
+      display: none;
+      visibility: hidden;
+   }
+   // .item-additional__icon-mark-main
+   &__icon-mark-main {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(calc(-50% + 5px), calc(-50% - 12px));
+
+      fill: currentColor;
+      @include adaptiveValue("width", 30, 25, 0, 1530, 991.98);
+      @include adaptiveValue("height", 30, 25, 0, 1530, 991.98);
+      //===============================================================================================================
+      @media screen and (max-width: $tablet) {
+         @include adaptiveValue("width", 25, 20, 0, 991.98, 767.98);
+         @include adaptiveValue("height", 25, 20, 0, 991.98, 767.98);
+         transform: translate(calc(-50% + 5px), calc(-50% - 9px));
+      }
+   }
+   &.active .item-additional__icon-plane {
+      display: flex;
+      visibility: visible;
+   }
+   &.active .item-additional__line {
+      visibility: visible;
+   }
+   &.active .item-additional__icon-mark {
+      color: $mainColor;
+      animation: pulsar-icon 2.5s ease-in-out infinite;
+   }
+   &.active .item-additional__name {
+      visibility: visible;
+   }
+}
+//===============================================================================================================
+@keyframes pulsar {
+   0% {
+      transform: scale(1);
+      opacity: 60%;
+   }
+   100% {
+      transform: scale(1.5);
+      opacity: 0%;
+   }
+}
+@keyframes pulsar-icon {
+   0% {
+      transform: scale(1) translate(calc(-50% + 0px), calc(-50% - 10px));
+   }
+   50% {
+      transform: scale(1.1) translate(calc(-50% + 0px), calc(-50% - 10px));
+   }
+   100% {
+      transform: scale(1) translate(calc(-50% + 0px), calc(-50% - 10px));
+   }
+}
+//===============================================================================================================
+@keyframes pulsar-plane {
+   0% {
+      transform: translate(calc(-50% - 124px), calc(-50% + 1px)) rotate(26.34deg);
+      visibility: visible;
+   }
+   50% {
+      transform: translate(calc(-50% + 124px), calc(-50% + 1px)) rotate(26.34deg);
+      visibility: hidden;
+   }
+   51% {
+      transform: translate(calc(-50% + 124px), calc(-50% + 1px)) rotate(-25deg) scaleX(-1);
+   }
+   100% {
+      transform: translate(calc(-50% - 124px), calc(-50% + 1px)) rotate(-25deg) scaleX(-1);
+      visibility: visible;
+   }
+}
+@keyframes pulsar-plane-2 {
+   0% {
+      transform: translate(calc(-50% - 35px), calc(-50% + 1px)) rotate(26.34deg);
+      visibility: visible;
+   }
+   50% {
+      transform: translate(calc(-50% + 25px), calc(-50% + 1px)) rotate(26.34deg);
+      visibility: hidden;
+   }
+   51% {
+      transform: translate(calc(-50% + 25px), calc(-50% + 1px)) rotate(-25deg) scaleX(-1);
+   }
+   100% {
+      transform: translate(calc(-50% - 35px), calc(-50% + 1px)) rotate(-25deg) scaleX(-1);
+      visibility: visible;
+   }
+}
+@keyframes pulsar-plane-3 {
+   0% {
+      transform: translate(calc(-50% - 115px), calc(-50% + 1px)) rotate(26.34deg);
+      visibility: visible;
+   }
+   50% {
+      transform: translate(calc(-50% + 105px), calc(-50% + 1px)) rotate(26.34deg);
+      visibility: hidden;
+   }
+   51% {
+      transform: translate(calc(-50% + 105px), calc(-50% + 1px)) rotate(-25deg) scaleX(-1);
+   }
+   100% {
+      transform: translate(calc(-50% - 115px), calc(-50% + 1px)) rotate(-25deg) scaleX(-1);
+      visibility: visible;
+   }
+}
+@keyframes pulsar-plane-4 {
+   0% {
+      transform: translate(calc(-50% - 126px), calc(-50% + 1px)) rotate(26.34deg);
+      visibility: visible;
+   }
+   50% {
+      transform: translate(calc(-50% + 130px), calc(-50% + 1px)) rotate(26.34deg);
+      visibility: hidden;
+   }
+   51% {
+      transform: translate(calc(-50% + 130px), calc(-50% + 1px)) rotate(-25deg) scaleX(-1);
+   }
+   100% {
+      transform: translate(calc(-50% - 126px), calc(-50% + 1px)) rotate(-26.34deg) scaleX(-1);
+      visibility: visible;
+   }
+}
+@keyframes pulsar-plane-5 {
+   0% {
+      transform: translate(calc(-50% - 18px), calc(-50% + 1px)) rotate(26.34deg);
+      visibility: visible;
+   }
+   50% {
+      transform: translate(calc(-50% + 16px), calc(-50% + 1px)) rotate(26.34deg);
+      visibility: hidden;
+   }
+   51% {
+      transform: translate(calc(-50% + 16px), calc(-50% + 1px)) rotate(-28.34deg) scaleX(-1);
+   }
+   100% {
+      transform: translate(calc(-50% - 18px), calc(-50% + 1px)) rotate(-28.34deg) scaleX(-1);
+      visibility: visible;
+   }
+}
+@keyframes pulsar-plane-6 {
+   0% {
+      transform: translate(calc(-50% - 28px), calc(-50% - 13px)) rotate(30.34deg);
+      visibility: visible;
+   }
+   50% {
+      transform: translate(calc(-50% + 28px), calc(-50% - 13px)) rotate(30.34deg);
+      visibility: hidden;
+   }
+   51% {
+      transform: translate(calc(-50% + 28px), calc(-50% - 13px)) rotate(-28.34deg) scaleX(-1);
+   }
+   100% {
+      transform: translate(calc(-50% - 28px), calc(-50% - 13px)) rotate(-28.34deg) scaleX(-1);
+      visibility: visible;
+   }
+}
+//===============================================================================================================

@@ -1,0 +1,182 @@
+.teams {
+   @extend %padding;
+   //===============================================================================================================
+   background-image: url(../img/contacts/bg/contacts-bg-3.webp);
+   @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url("../img/contacts/bg/contacts-bg-3@2x.webp");
+   }
+   //===============================================================================================================
+   @extend %bg;
+   // .teams__container
+   &__container {
+      min-width: 0;
+   }
+   // .teams__titles
+   &__titles {
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 55, 30);
+      }
+   }
+   // .teams__suptitle
+   &__suptitle {
+   }
+   // .teams__titel
+   &__titel {
+   }
+   // .teams__slider
+   &__slider {
+   }
+}
+//===============================================================================================================
+.slider-teams {
+   position: relative;
+   padding-bottom: rem(60);
+   // .slider-teams__items
+   &__items {
+   }
+   // .slider-teams__item
+   &__item {
+      display: flex;
+      align-items: stretch;
+   }
+   // .slider-teams__content-slide
+   &__content-slide {
+      display: flex;
+      max-width: rem(750);
+
+      @include adaptiveValue("gap", 40, 20, 0, 1530, 991.98);
+
+      background-color: #23303f;
+      border: rem(1) solid rgba(85, 122, 161, 0.3);
+      //===============================================================================================================
+      @media screen and (max-width: em(1199.98)) {
+         flex-direction: column;
+         min-width: 100%;
+      }
+   }
+   // .slider-teams__picture
+   &__picture {
+      text-align: center;
+      img {
+         max-width: 100%;
+         height: auto;
+         //===============================================================================================================
+         @media screen and (max-width: $mobileSmall) {
+            width: 100%;
+         }
+      }
+   }
+   // .slider-teams__descripthen
+   &__descripthen {
+      display: flex;
+      flex-direction: column;
+
+      @include adaptiveValue("padding-top", 50, 25, 0, 1530, 991.98);
+      @include adaptiveValue("padding-bottom", 10, 5, 0, 1530, 991.98);
+      @include adaptiveValue("padding-right", 50, 25, 0, 1530, 991.98);
+      //===============================================================================================================
+      @media screen and (max-width: em(1199.98)) {
+         align-items: center;
+      }
+      //===============================================================================================================
+      @media screen and (max-width: $mobile) {
+         @include adaptiveValue("padding-bottom", 5, 25);
+         @include adaptiveValue("padding-right", 25, 10);
+         @include adaptiveValue("padding-left", 25, 10);
+      }
+   }
+   // .slider-teams__title
+   &__title {
+      font-weight: 500;
+      @include adaptiveValue("font-size", 22, 20);
+      line-height: math.div(22, 22);
+      color: $text-des;
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 15, 10);
+      }
+   }
+   // .slider-teams__subtitle
+   &__subtitle {
+      font-weight: 400;
+      @include adaptiveValue("font-size", 14, 12);
+      line-height: math.div(20, 14);
+      color: $color-tex;
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 30, 15);
+      }
+      //===============================================================================================================
+      @media screen and (max-width: $mobileSmall) {
+         text-align: center;
+      }
+   }
+   // .slider-teams__inner
+   &__inner {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+
+      @include adaptiveValue("gap", 30, 15);
+      &:not(:last-child) {
+         margin-bottom: rem(12);
+      }
+   }
+   // .slider-teams__link
+   &__link {
+      display: flex;
+      align-items: center;
+
+      @include adaptiveValue("gap", 10, 8);
+
+      font-weight: 400;
+      @include adaptiveValue("font-size", 16, 12);
+      line-height: math.div(24, 16);
+      color: $color-tex;
+
+      transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+      @media (any-hover: hover) {
+         &:hover {
+            color: $hover-text;
+         }
+      }
+   }
+   // .slider-teams__icon
+   &__icon {
+      fill: currentColor;
+   }
+   // .slider-teams__button
+   &__button {
+      cursor: pointer;
+      position: absolute;
+      z-index: 11;
+   }
+   // .slider-teams__button-prev
+   &__button-prev {
+      bottom: rem(2);
+      left: rem(10);
+   }
+   // .slider-teams__button-next
+   &__button-next {
+      bottom: rem(2);
+      right: rem(10);
+      transform: rotate(180deg);
+   }
+   // .slider-teams__button-icon
+   &__button-icon {
+      color: #227ce4;
+      svg {
+         display: flex;
+         width: 40px;
+         height: 25px;
+         fill: currentColor;
+      }
+   }
+}
+
+.swiper-pagination-bullet {
+   width: rem(30);
+   height: rem(8);
+   border-radius: 0%;
+   background-color: #227ce4;
+}

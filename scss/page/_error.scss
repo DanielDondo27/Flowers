@@ -1,0 +1,68 @@
+.hero-error {
+   min-height: calc(100vh - rem(70));
+   background-image: url(../img/error/error-bg.webp);
+   //===============================================================================================================
+   @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url("../img/error/error-bg@2x.webp");
+   }
+   //===============================================================================================================
+   @extend %bg;
+   // .hero-error__container
+   &__container {
+   }
+   // .hero-error__inner
+   &__inner {
+      padding-top: rem(150);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+   // .hero-error__suptitle
+   &__suptitle {
+      font-weight: 500;
+      font-size: rem(16);
+      line-height: math.div(15, 16);
+      letter-spacing: 0.1em;
+      &:not(:last-child) {
+         margin-bottom: rem(10);
+      }
+   }
+   // .hero-error__title
+   &__title {
+      position: relative;
+      font-weight: 600;
+      @include adaptiveValue("font-size", 280, 120);
+      line-height: math.div(341, 280);
+      &::before {
+         content: "";
+         position: absolute;
+         bottom: 0;
+         left: 50%;
+         transform: translateX(-50%);
+         height: rem(2);
+         width: rem(60);
+         background-color: $mainColor;
+      }
+      &:not(:last-child) {
+         margin-bottom: rem(30);
+      }
+   }
+   // .hero-error__text
+   &__text {
+      font-weight: 400;
+      @include adaptiveValue("font-size", 18, 12);
+      line-height: math.div(26, 18);
+      text-align: center;
+      &._last {
+         &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 60, 30);
+         }
+      }
+   }
+   // .hero-error__button
+   &__button {
+   }
+}

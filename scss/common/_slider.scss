@@ -1,0 +1,28 @@
+//===============================================================================================================
+.swiper-wrapper {
+   transition-timing-function: linear !important;
+}
+//===============================================================================================================
+.slider-hero {
+   width: rem(550);
+   margin: 0;
+   padding-bottom: 50px;
+   @media screen and (max-width: em(580)) {
+      width: 100%;
+   }
+   // .slider-hero__items
+   &__items {
+   }
+   // .slider-hero__item
+   &__item {
+      text-align: center;
+   }
+   // .slider-hero__picture
+   &__picture {
+      text-align: center;
+      img {
+         max-width: 100%;
+      }
+   }
+}
+//===============================================================================================================

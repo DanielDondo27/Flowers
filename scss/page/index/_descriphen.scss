@@ -1,0 +1,122 @@
+.descriphen {
+   @extend %padding;
+
+   @extend %bg;
+   //===============================================================================================================
+   background-image: url(../img/home/home__descriphen/descriphen-bg.png);
+   @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url("../img/home/home__descriphen/descriphen-bg@2x.png");
+   }
+   //===============================================================================================================
+   @media screen and (max-width: $mobileSmall) {
+      background-image: url(../img/home/home__descriphen/descriphen-mobile-bg.png);
+      @media screen and (min-device-pixel-ratio: 2),
+         screen and (min-resolution: 192dpi),
+         screen and (min-resolution: 2dppx) {
+         background-image: url("../img/home/home__descriphen/descriphen-mobile-bg@2x.png");
+      }
+   }
+   // .descriphen__container
+   &__container {
+   }
+   // .descriphen__titles
+   &__titles {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      gap: rem(5);
+
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 55, 30);
+      }
+   }
+   // .descriphen__suptitle
+   &__suptitle {
+   }
+   // .descriphen__titel
+   &__titel {
+   }
+   // .descriphen__items
+   &__items {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      @include adaptiveValue("gap", 30, 15);
+      @media screen and (max-width: $tablet) {
+         grid-template-columns: repeat(2, 1fr);
+         grid-template-rows: repeat(3, 1fr);
+      }
+      @media screen and (max-width: em(540.98)) {
+         grid-template-columns: 1fr;
+         grid-template-rows: repeat(6, 1fr);
+      }
+   }
+   // .descriphen__item
+   &__item {
+      position: relative;
+
+      display: flex;
+      align-items: center;
+
+      @include adaptiveValue("gap", 30, 10, 0, 1530, 991.98);
+      @include adaptiveValue("padding-top", 44, 30, 0, 1530, 991.98);
+      @include adaptiveValue("padding-bottom", 44, 30, 0, 1530, 991.98);
+      @include adaptiveValue("padding-left", 40, 24, 0, 1530, 991.98);
+      @include adaptiveValue("padding-right", 40, 24, 0, 1530, 991.98);
+
+      background-color: $bgc-des;
+      border: rem(1) solid rgba(85, 122, 161, 0.3);
+
+      &::before {
+         content: "";
+         position: absolute;
+         top: 50%;
+         left: 0;
+         transform: translate(0%, -50%);
+         width: rem(1);
+         height: rem(50);
+         background-color: $text-des;
+      }
+
+      //===============================================================================================================
+      @media screen and (max-width: $tablet) {
+         @include adaptiveValue("gap", 10, 5, 0, 991.98, 540.98);
+      }
+      //===============================================================================================================
+      @media screen and (max-width: em(540.98)) {
+         @include adaptiveValue("gap", 5, 20);
+      }
+   }
+}
+//===============================================================================================================
+.item-descriphen {
+   // .item-descriphen__picture
+   &__picture {
+      img {
+         max-width: 100%;
+         height: auto;
+      }
+   }
+   // .item-descriphen__content
+   &__content {
+      display: flex;
+      flex-direction: column;
+      gap: rem(8);
+   }
+   // .item-descriphen__suptext
+   &__suptext {
+      font-weight: 600;
+      @include adaptiveValue("font-size", 30, 22);
+      line-height: math.div(37, 30);
+      color: $text-des;
+   }
+   // .item-descriphen__text
+   &__text {
+      font-weight: 500;
+      @include adaptiveValue("font-size", 16, 13);
+      line-height: math.div(22, 16);
+      color: $color-tex;
+   }
+}

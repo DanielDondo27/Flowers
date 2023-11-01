@@ -1,0 +1,184 @@
+//===============================================================================================================
+.tariffs {
+   @extend %padding;
+   background-image: url(../img/home/home__tariffs/tariffs-bg.png);
+   @extend %bg;
+   //===============================================================================================================
+   @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url("../img/home/home__tariffs/tariffs-bg@2x.png");
+   }
+   // .tariffs__container
+   &__container {
+   }
+   // .tariffs__titles
+   &__titles {
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 55, 30);
+      }
+   }
+   // .tariffs__items
+   &__items {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr;
+      @include adaptiveValue("gap", 30, 15, 0, 1530, 991.98);
+      //===============================================================================================================
+      @media screen and (max-width: $tablet) {
+         grid-template-columns: repeat(2, 1fr);
+         grid-template-rows: 2fr;
+      }
+      //===============================================================================================================
+      @media screen and (max-width: em(540.98)) {
+         grid-template-columns: 1fr;
+         grid-template-rows: repeat(3, 1fr);
+      }
+   }
+   // .tariffs__item
+   &__item {
+      position: relative;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      @include adaptiveValue("padding-top", 44, 30, 0, 1530, 991.98);
+      @include adaptiveValue("padding-bottom", 44, 30, 0, 1530, 991.98);
+      @include adaptiveValue("padding-left", 40, 24, 0, 1530, 991.98);
+      @include adaptiveValue("padding-right", 40, 24, 0, 1530, 991.98);
+
+      background-color: $bgc-des;
+      border: rem(1) solid rgba(85, 122, 161, 0.3);
+
+      &:nth-child(1),
+      &:nth-child(3) {
+         &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(0%, -50%);
+            width: rem(1);
+            height: rem(50);
+            background-color: $text-des;
+         }
+         //===============================================================================================================
+         @media screen and (max-width: em(540.98)) {
+            align-items: flex-start;
+         }
+      }
+      &:nth-child(2) {
+         background-image: url(../img/home/home__tariffs/tariffs-2.jpg);
+         background-repeat: no-repeat;
+         background-position: center;
+         background-size: cover;
+         backdrop-filter: blur(10px);
+      }
+      &:nth-child(3) {
+         @media screen and (min-width: em(540.98)) and (max-width: $tablet) {
+            grid-row: 2;
+            grid-column: 1 / span 2;
+         }
+      }
+   }
+}
+
+//===============================================================================================================
+.item-tariffs {
+   // .item-tariffs__inner
+   &__inner {
+      display: flex;
+      align-items: center;
+      @include adaptiveValue("gap", 30, 20);
+
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 42, 30);
+      }
+      //===============================================================================================================
+   }
+   // .item-tariffs__picture
+   &__picture {
+      img {
+         max-width: 100%;
+         height: auto;
+      }
+   }
+   // .item-tariffs__content
+   &__content {
+      display: flex;
+      flex-direction: column;
+      @include adaptiveValue("gap", 10, 8);
+   }
+   // .item-tariffs__suptext
+   &__suptext {
+      font-weight: 400;
+      @include adaptiveValue("font-size", 30, 22);
+      line-height: math.div(37, 30);
+      color: $text-des;
+   }
+   // .item-tariffs__text
+   &__text {
+      font-weight: 400;
+      @include adaptiveValue("font-size", 22, 16);
+      line-height: math.div(22, 22);
+      color: $color-tex;
+   }
+   // .item-tariffs__sub-text
+   &__sub-text {
+      font-weight: 400;
+      @include adaptiveValue("font-size", 16, 13);
+      line-height: math.div(22, 16);
+      color: $color-tex;
+   }
+   // .item-tariffs__wrapper-btn
+   &__wrapper-btn {
+   }
+   // .item-tariffs__button
+   &__button {
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+
+      @include adaptiveValue("padding-top", 23, 16);
+      @include adaptiveValue("padding-bottom", 23, 16);
+      @include adaptiveValue("padding-left", 51, 30);
+      @include adaptiveValue("padding-right", 51, 30);
+
+      font-weight: 500;
+      @include adaptiveValue("font-size", 13, 12);
+      line-height: math.div(16, 13);
+      text-transform: uppercase;
+      backdrop-filter: none;
+      letter-spacing: 0.1em;
+      text-align: center;
+
+      border: rem(1) solid #ffffff5c;
+      transition: border-color 500ms cubic-bezier(0.4, 0, 0.2, 1), color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+      &:before {
+         content: "";
+         position: absolute;
+         top: 0;
+         right: -50px;
+         bottom: 0;
+         left: 0;
+         border-right: rem(300) solid transparent;
+         border-top: rem(350) solid #ffffff5c;
+         transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+         transform: translateX(-100%);
+         z-index: -1;
+      }
+      //===============================================================================================================
+      @media (any-hover: hover) {
+         &:hover {
+            border-color: $hover-text;
+            color: $mainColor;
+         }
+         &:hover:before {
+            transform: translateX(0%);
+         }
+      }
+   }
+}
